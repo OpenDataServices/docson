@@ -19,6 +19,7 @@
         <div class="box-title" ref="{{__ref}}">
             {{#name this}}<div class="box-name {{#if root}}title{{/if}}">{{__name}}</div>{{/name}}
             <div class="box-description desc">{{desc this}}</div>
+            <div class="box-description desc">* Required field</div>
             <div class="end"></div>
         </div>
     </div>
@@ -62,7 +63,7 @@
             {{#each properties}}
             <div class="signature">
                 <div class="signature-header">
-                    <div class="property-name {{#contains ../required @key}}required{{/contains}}">{{@key}}</div>
+                    <div class="property-name {{#contains ../required @key}}required{{/contains}}">{{@key}}{{#contains ../required @key}} *{{/contains}}</div>
                     <div class="signature-type">
                         {{#main this}}
                             {{signature this null this}}
